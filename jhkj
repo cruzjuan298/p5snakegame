@@ -1,0 +1,27 @@
+let xValue = 40;
+let yValue = 50;
+let appleArray =[];
+function setup(){
+    createCanvas(500, 500);
+    for (let i = 0; i < 30; i++ ){
+        let randomwh = random(20, 50);
+        let apple = new Apples(random(0, 500), random(0, 500), randomwh, randomwh);
+        appleArray.push(apple);
+    }
+    
+}
+function draw(){
+    background(0)
+    for(let i = 0; i < appleArray.length; i++){
+        ellipse(appleArray[i].xValue, appleArray[i].yValue, appleArray[i].wValue,appleArray[i].hValue);
+    }
+}
+class Apples{
+    constructor(x, y, w, h){
+        this.xValue = x;
+        this.yValue = y;
+        this.wValue = w;
+        this.hValue = h;
+
+    }
+}
